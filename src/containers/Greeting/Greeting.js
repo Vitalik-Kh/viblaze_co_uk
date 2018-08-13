@@ -3,13 +3,19 @@ import Title from '../../components/Greeting/Title/Title';
 
 class Greeting extends React.Component {
     state = {
-        
+        titleIsComlete: false
+    }
+
+    onTitleComlete = () => {
+        this.setState({ titleIsComlete: true });
     }
 
     render() {
         return (
             <div>
-                <Title />
+                <Title 
+                    onFinish = { this.onTitleComlete } 
+                    completed = { this.state.titleIsComlete } />
             </div>
         );  
     }

@@ -1,14 +1,14 @@
 import React from 'react';
-import classes from './AnimMatrixText.scss';
-import randomizer from '../../utility/randomizer';
+import classes from './RollInText.scss';
+import randomizer from '../../../../utility/randomizer';
 
-class AnimMatrixText extends React.Component {
+class RollInText extends React.Component {
     state = {
         messages: ''
     }
 
     componentDidMount = () => {
-        this.runAnimation(this.props.message);
+        this.runAnimation(this.props.message, this.props.finished);
     }
 
     runAnimation = (message, callback) => {
@@ -89,4 +89,4 @@ class AnimMatrixText extends React.Component {
     }
 }
 
-export default AnimMatrixText;
+export default RollInText;

@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Title.scss';
-import AnimMatrixText from '../../AnimMatrixText/AnimMatrixText';
+import RollInText from './RollInText/RollInText';
 
 class TitleMessage extends React.Component {
     state = {
@@ -13,7 +13,8 @@ class TitleMessage extends React.Component {
             "from Leeds"
         ],
         output: [],
-        curr_message: null
+        curr_message: null,
+        animating: false,
     }
 
     componentDidMount = () => {
@@ -30,21 +31,29 @@ class TitleMessage extends React.Component {
 
     componentDidUpdate = () => {
         //add new message line
-        setTimeout(() => {
+        if (this.state.animating === false) {
             if(this.state.curr_message < this.state.messages.length) {
                 const newOutput = [ ...this.state.output ];
                 newOutput.push(this.state.messages[this.state.curr_message]);
                 const next_message = this.state.curr_message + 1;
-                this.setState({ output: newOutput, curr_message: next_message });
-            } else {
-                console.log('next one');
+                this.setState({
+                    output: newOutput, 
+                    curr_message: next_message, 
+                    animating: true 
+                });
+            } else if(!this.props.completed) {
+                this.props.onFinish();
             }
-        }, 1000);
+        }
+    }
+
+    onRowAnimFinished = () => {
+        this.setState({ animating: false });
     }
 
     render() {
         const messages = this.state.output.map((message, i) => {
-            return <AnimMatrixText key={ i } message = { message } />
+            return <RollInText key={ i } message = { message } finished = { this.onRowAnimFinished }/>
         });
         return (
             <div className={ classes.Title }>

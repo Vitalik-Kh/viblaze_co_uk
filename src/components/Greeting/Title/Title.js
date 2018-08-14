@@ -19,8 +19,7 @@ class TitleMessage extends React.Component {
 
     componentDidMount = () => {
         //adjust number of rows accroding to device width
-        const windowWidth = window.innerWidth;
-        if (windowWidth > 610) {
+        if (this.props.windowWidth >= 610) {
             const m = this.state.messages;
             const newMessages = [m[0] + ' ' + m[1], m[2] + ' ' + m[3] + ' ' + m[4]];
             this.setState({ messages: newMessages, curr_message: 0 });

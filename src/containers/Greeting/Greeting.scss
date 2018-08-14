@@ -1,0 +1,15 @@
+//@import '../../utility/sass_vars.scss';
+.Greeting {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    padding: 24px 0;
+
+    background-image: linear-gradient($main-blue, $main-blue), 
+    linear-gradient(#6d7eb5, #6d7eb5);
+    background-size: 0px 3px, 0px 3px;
+    background-repeat: no-repeat;
+    background-position: top, bottom;
+}

@@ -188,7 +188,13 @@ module.exports = {
                   ],
                 },
               },
-              require.resolve('sass-loader')
+              require.resolve('sass-loader'),
+              {
+                loader: require.resolve('sass-resources-loader'),
+                options: {
+                  resources: './src/constants/sass_const.scss'
+                }
+              }
             ],
           },
           // "file" loader makes sure those assets get served by WebpackDevServer.

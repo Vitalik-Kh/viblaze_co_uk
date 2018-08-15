@@ -1,16 +1,24 @@
 import React from 'react';
 import Title from '../../components/Greeting/Title/Title';
 import classes from './Greeting.scss';
-import { VelocityComponent } from 'velocity-react';
+import { VelocityComponent, VelocityTransitionGroup } from 'velocity-react';
+import * as Anims from '../../utility/animations';
 
 class Greeting extends React.Component {
     state = {
         titleIsComlete: false,
-        windowWidth: null,    
+        windowWidth: null,
+           
     }
+
+    greetingRef = React.createRef();
 
     componentWillMount = () => {
         this.setState({ windowWidth: window.innerWidth });
+    }
+
+    componentDidMount = () => {
+        console.log(Anims.greeting);
     }
 
     onTitleComlete = () => {
@@ -26,9 +34,9 @@ class Greeting extends React.Component {
         return (
             <VelocityComponent
                 animation = {this.state.titleIsComlete ? 
-                    { backgroundSize: `${line_width} 3px, ${line_width} 3px` } : null}
-                duration = '600'>
-                <div className={ classes.Greeting }>
+                    Anims.greeting  : null}
+                >
+                <div className={ classes.Greeting } ref={ this.greetingRef }>
                     <Title 
                         onFinish = { this.onTitleComlete } 
                         completed = { this.state.titleIsComlete }

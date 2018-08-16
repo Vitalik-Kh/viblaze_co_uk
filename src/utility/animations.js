@@ -2,15 +2,19 @@ import { velocityHelpers } from 'velocity-react';
 
 const $main_blue = '#6d7eb5';
 const $main_red = '#DE4A4A';
-const $text_gray = '#414141';
 const $yellow = '#eccb39';
 const $green = '#24c253';
 const $pink = '#d31b8c';
 
+let line_width = '70%';
+if (window.innerWidth >= 610  ) {
+    line_width = '550px';
+}
+
 export const greeting = velocityHelpers.registerEffect({
         defaultDuration: 5000,
         calls: [
-            [{ backgroundSize: '70% 3px, 70% 3px' }, 0.25],
+            [{ backgroundSize: `${line_width} 3px, ${line_width} 3px` }, 0.25],
             [{ height: '3px', padding: 0 }, 0.10, { delay: 1000 }],
             [{ 
                 width: ['3px','100%'], 
@@ -52,7 +56,7 @@ export const greeting = velocityHelpers.registerEffect({
                 height: '5000px',
                 backgroundColor: $main_blue
 
-            }, 0.20, { easing: 'ease-out', delay: 200}],
+            }, 0.20, { easing: 'ease-out', delay: 300}],
             
         ]
     }); 

@@ -14,16 +14,19 @@ if (window.innerWidth >= 610  ) {
 export const greeting = velocityHelpers.registerEffect({
         defaultDuration: 5000,
         calls: [
-            [{ backgroundSize: `${line_width} 3px, ${line_width} 3px` }, 0.25],
+            [{ 
+                backgroundSize: `${line_width} 3px, ${line_width} 3px`,
+                translateY: ['-50%','-50%'],
+                translateX: ['-50%','-50%']
+            }, 0.25],
             [{ height: '3px', padding: 0 }, 0.10, { delay: 1000 }],
             [{ 
                 width: ['3px','100%'], 
+                backgroundSize: '0% 3px, 0% 3px' 
+            }, 0.05],
+            [{ 
                 borderRadius: '50%', 
                 backgroundColor: $main_blue,
-                backgroundSize: '0% 3px, 0% 3px' }, 0.05],
-            [{ 
-                translateY: ['-50%','-50%'],
-                translateX: ['-50%','-50%'],
                 width: '30px', 
                 height: '30px',
                 scaleX: 0.4,

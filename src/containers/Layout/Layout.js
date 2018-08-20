@@ -1,9 +1,13 @@
 import React from 'react';
 import Title from '../Title/Title';
+import MenuBar from '../../components/MenuBar/MenuBar';
 
 const layout = (props) => {
     return (
-        <Title />
+        <div>
+            <MenuBar />
+            <Title />
+        </div>
     );
 }
 

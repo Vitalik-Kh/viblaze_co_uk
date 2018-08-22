@@ -25,8 +25,7 @@ export const greeting = velocityHelpers.registerEffect({
                 backgroundSize: '0% 3px, 0% 3px' 
             }, 0.05],
             [{ 
-                borderRadius: '50%', 
-                backgroundColor: $main_blue,
+                borderRadius: '50%',
                 width: '30px', 
                 height: '30px',
                 scaleX: 0.4,
@@ -63,3 +62,5 @@ export const greeting = velocityHelpers.registerEffect({
             
         ]
     }); 
+
+

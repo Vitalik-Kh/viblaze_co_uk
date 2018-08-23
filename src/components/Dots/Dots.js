@@ -15,10 +15,13 @@ class DotedLine extends React.Component {
     dotsRef = React.createRef();
 
     render() {
+        const dots = [];
+        for(let i = 1; i<=8; i++) {
+            dots.push(<div key={ i } className={ classes.Dot }></div>);
+        }
         return (
             <div className={ classes.Dots } ref={ this.dotsRef }>
-                <div className={ classes.Dot }></div>
-                <div className={ classes.Dot }></div>
+                { dots }
             </div>
             
         );

@@ -13,7 +13,7 @@ class Title extends React.Component {
 
     render() {
         const doted_lines = [];
-        for(let i=0; i<20; i++) {
+        for(let i=0; i<15; i++) {
             doted_lines.push(<Dots key={ i } />)
         }
         return (

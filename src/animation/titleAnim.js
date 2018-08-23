@@ -5,32 +5,53 @@ function dotsAnim(dotsContainer) {
     this.count = 0;
 
     this.animate = () => {
-        const runReposition = () => { this.reposition(); }
+        const runReposition = () => { this.reposition() }
         const count = this.count;
+        const animProps = { left: '+=35px' };
+        const animOptions = { duration: 700, easing: 'linear' };
+        const opacity = [(Math.random() * 2 + 4) / 10, 0];
+        const lastDot = dots[7];
         const sequence = [
-            { 
-                e: dots[1], 
-                p: {
-                    left: ['245px', '0px'], 
-                    translateZ: [
-                        function() { return Math.random() * 200 + 150 + 'px' },
-                        '0px' 
-                    ]
-                }, 
-                o: { duration: 4200 } 
-            },
+            { e: dots[0], p: { opacity: [0.9, 0] }, o: { duration: 1 } },
+            { e: lastDot, p: { opacity: opacity }, o: { duration: 1 } },
+
+            { e: dots, p: { scaleX: [1, 0], scaleY: [1, 0] }, o: { duration: 1000 } },
+
+            { e: lastDot, p: animProps, o: animOptions },
+            { e: dots[1], p: { opacity: opacity }, o: { duration: 1 } },
+
+            { e: lastDot, p: animProps, o: animOptions },
+            { e: dots[2], p: { opacity: opacity }, o: { duration: 1 } },
+
+            { e: lastDot, p: animProps, o: animOptions },
+            { e: dots[3], p: { opacity: opacity }, o: { duration: 1 } },
+
+            { e: lastDot, p: animProps, o: animOptions },
+            { e: dots[4], p: { opacity: opacity }, o: { duration: 1 } },
+
+            { e: lastDot, p: animProps, o: animOptions },
+            { e: dots[5], p: { opacity: opacity }, o: { duration: 1 } },
+
+            { e: lastDot, p: animProps, o: animOptions },
+            { e: dots[6], p: { opacity: opacity }, o: { duration: 1 } }, 
+            
+            { e: lastDot, p: animProps, o: animOptions },
+
             { 
                 e: dots, 
-                p: { scaleX: [0, 1], scaleY: [0, 1] }, 
+                p: { scaleX: 0, scaleY: 0 }, 
                 o: { 
                     duration: 2000, 
                     complete: function() { 
                         if (count <= 3) {
                             runReposition() 
-                        } 
-                    }} 
-            }               
+                        }  
+                    } 
+                } 
+            }
+            
         ];
+
         Velocity.RunSequence(sequence);
     }
 
@@ -43,16 +64,6 @@ function dotsAnim(dotsContainer) {
         const newSize = Math.random() + 0.1;
 
         Velocity(
-            dots[1], 
-            {   
-                left: ['0px', '245px'], 
-                translateZ: ['0px','300px'],
-                opacity: [ 
-                    function() { return (Math.random() * 2 + 3) / 10 }, 
-                    0], 
-            }, 
-            { duration: 1 });
-        Velocity(
             dotsContainer, 
             { 
                 top: [newTop, 0], 
@@ -64,7 +75,11 @@ function dotsAnim(dotsContainer) {
             { duration: 1 });
         Velocity(
             dots, 
-            { scaleX: [1, 0], scaleY: [1, 0] }, 
+            { opacity: [0, 0.5] }, 
+            { duration: 1 });
+        Velocity(
+            dots[7], 
+            { left: ['0px', '245px'], opacity: 0.5 }, 
             { duration: 1, complete: function() { runAnimate() } });
         this.count++;
     }

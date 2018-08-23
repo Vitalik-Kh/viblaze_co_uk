@@ -1,7 +1,6 @@
 .Dots {
     position: absolute;
-    perspective: 500px;
-    perspective-origin: center;
+    perspective: 300px;
 
     div {
         position: absolute;
@@ -10,13 +9,19 @@
         border-radius: 50%;
         background: #fff;
         float: left;
-        opacity: 0.5;
+        opacity: 0;
         box-shadow: 0 0 3px 1px rgba(#fff, .5);
         transform: scaleX(0);
         transform: scaleY(0);
 
     }
 
-    div:nth-child(1) { opacity: 1 }
+    $left: 0;
+    @for $i from 1 to 8 {
+        div:nth-child(#{$i}) {
+            left: #{$left}px;
+        }
+        $left: $left + 35;
+    }
 
 }

@@ -1,0 +1,22 @@
+.Dots {
+    position: absolute;
+    perspective: 500px;
+    perspective-origin: center;
+
+    div {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #fff;
+        float: left;
+        opacity: 0.5;
+        box-shadow: 0 0 3px 1px rgba(#fff, .5);
+        transform: scaleX(0);
+        transform: scaleY(0);
+
+    }
+
+    div:nth-child(1) { opacity: 1 }
+
+}

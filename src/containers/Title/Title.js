@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Title.scss';
-import DotedLine from '../../components/DotedLine/DotedLine';
+import Dots from '../../components/Dots/Dots';
 
 class Title extends React.Component {
     state = {
@@ -14,7 +14,7 @@ class Title extends React.Component {
     render() {
         const doted_lines = [];
         for(let i=0; i<20; i++) {
-            doted_lines.push(<DotedLine key={ i } />)
+            doted_lines.push(<Dots key={ i } />)
         }
         return (
             <div className={ classes.Title }>

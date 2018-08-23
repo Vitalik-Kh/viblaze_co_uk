@@ -2,7 +2,7 @@ import React from 'react';
 import Title from '../../components/Greeting/Title/Title';
 import classes from './Greeting.scss';
 import { VelocityComponent } from 'velocity-react';
-import * as Anims from '../../utility/animations';
+import { greetingAnim } from '../../animation/greetingAnim';
 
 class Greeting extends React.Component {
     state = {
@@ -27,7 +27,7 @@ class Greeting extends React.Component {
     render() {
         return (
             <VelocityComponent
-                animation = { this.state.titleIsComlete ? Anims.greeting  : null }
+                animation = { this.state.titleIsComlete ? greetingAnim  : null }
                 complete = { this.props.onGreetingComplete }
                 >
                 <div className={ classes.Greeting } ref={ this.greetingRef }>

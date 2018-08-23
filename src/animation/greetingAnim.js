@@ -11,7 +11,7 @@ if (window.innerWidth >= 610  ) {
     line_width = '550px';
 }
 
-export const greeting = velocityHelpers.registerEffect({
+export const greetingAnim = velocityHelpers.registerEffect({
         defaultDuration: 5000,
         calls: [
             [{ 

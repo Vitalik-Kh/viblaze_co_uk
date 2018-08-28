@@ -1,0 +1,30 @@
+.Portfolio {
+    width: 100%;
+    background: #fff;
+
+    .Container {
+        @extend %container;
+
+        h2 { margin: 0 0 50px; text-align: center; color: $text-gray }
+
+    }
+}
+
+.PortfolioContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    width: $cont-max-width / 3;
+}
+
+@media screen and (min-width: 730px) {
+    .PortfolioContainer {
+        width: $cont-max-width - $cont-max-width/3;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .PortfolioContainer {
+        width: $cont-max-width;
+    }
+}

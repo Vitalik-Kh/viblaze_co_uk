@@ -1,6 +1,17 @@
+//colors
 $main-blue: #6d7eb5;
 $main-red: #DE4A4A;
 $text-gray: #414141;
 $yellow: #eccb39;
 $green: #24c253;
 $pink: #d31b8c;
+
+//length
+$cont-max-width: 1000px;
+
+//partials
+%container { 
+    max-width: $cont-max-width;
+    padding: 80px 14px;
+    margin: 0 auto;
+}

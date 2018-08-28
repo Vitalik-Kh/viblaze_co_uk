@@ -1,0 +1,13 @@
+.PlayBtn {
+    width: 24px;
+    height: auto;
+    display: block;
+
+    .Circle {
+        fill: $yellow;
+    }
+
+    .Triangle {
+        stroke: $yellow;
+    }
+}

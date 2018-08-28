@@ -26,17 +26,19 @@ class Greeting extends React.Component {
 
     render() {
         return (
-            <VelocityComponent
-                animation = { this.state.titleIsComlete ? greetingAnim  : null }
-                complete = { this.props.onGreetingComplete }
-                >
-                <div className={ classes.Greeting } ref={ this.greetingRef }>
-                    <Title 
-                        onFinish = { this.onTitleComlete } 
-                        completed = { this.state.titleIsComlete }
-                        windowWidth = { this.state.windowWidth } />
-                </div>
-            </VelocityComponent>
+            <div className={ classes.GreetingContainer }>
+                <VelocityComponent
+                    animation = { this.state.titleIsComlete ? greetingAnim  : null }
+                    complete = { this.props.onGreetingComplete }
+                    >
+                    <div className={ classes.Greeting } ref={ this.greetingRef }>
+                        <Title 
+                            onFinish = { this.onTitleComlete } 
+                            completed = { this.state.titleIsComlete }
+                            windowWidth = { this.state.windowWidth } />
+                    </div>
+                </VelocityComponent>
+            </div>
         );  
     }
 }

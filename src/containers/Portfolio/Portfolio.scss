@@ -10,21 +10,32 @@
     }
 }
 
-.PortfolioContainer {
-    display: flex;
-    flex-wrap: wrap;
-    margin: auto;
-    width: $cont-max-width / 3;
+.Projects {
+    width: 100%;
+}
+
+@media screen and (min-width: 380px) {
+    .Projects {
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+        width: $cont-max-width / 3;
+    }
 }
 
 @media screen and (min-width: 730px) {
-    .PortfolioContainer {
+    .Projects {
         width: $cont-max-width - $cont-max-width/3;
     }
 }
 
 @media screen and (min-width: 1100px) {
-    .PortfolioContainer {
+    .Projects {
         width: $cont-max-width;
+    }
+
+    .Container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
 }

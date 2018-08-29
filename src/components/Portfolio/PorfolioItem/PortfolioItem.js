@@ -32,8 +32,8 @@ class PortfolioItem extends React.Component {
                         <div className={ classes.ItemText }>
                             <h3>{ this.props.title }</h3>
                             <div className={ classes.BtnsContainer }>
-                                <a className={ classes.PlayBtn } href='#' title='View live'><PlayBtn /></a>
-                                <a className={ classes.SrcCodeBtn } href='#' title='View source code'><SrcCodeBtn /></a>
+                                <a className={ classes.PlayBtn } href={ this.props.playLink } title='View live'><PlayBtn /></a>
+                                <a className={ classes.SrcCodeBtn } href={ this.props.srcLink } title='View source code'><SrcCodeBtn /></a>
                             </div>
                             <p>Technologies used:</p>
                             <p>{ this.props.techs.join(' ') }</p>

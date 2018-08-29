@@ -1,10 +1,12 @@
 .Portfolio {
     width: 100%;
     background: #fff;
+    overflow: hidden;
 
     .Container {
         @extend %container;
-
+        padding-left: 28px;
+        padding-right: 28px;
         h2 { margin: 0 0 50px; text-align: center; color: $text-gray }
 
     }
@@ -14,7 +16,7 @@
     width: 100%;
 }
 
-@media screen and (min-width: 380px) {
+@media screen and (min-width: 415px) {
     .Projects {
         display: flex;
         flex-wrap: wrap;
@@ -23,13 +25,13 @@
     }
 }
 
-@media screen and (min-width: 730px) {
+@media screen and (min-width: 770px) {
     .Projects {
         width: $cont-max-width - $cont-max-width/3;
     }
 }
 
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 1120px) {
     .Projects {
         width: $cont-max-width;
     }

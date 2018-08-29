@@ -10,7 +10,7 @@ export const projectMouseEnter = (project, text) => {
         Velocity({e: project, p: { zIndex: 1 }, o: { duration: 1 }});
         Velocity({
             e: project, 
-            p: { scaleX: [1.15, 1], scaleY: [1.15, 1] },
+            p: { scaleX: [1.3, 1], scaleY: [1.3, 1] },
             o: { duration: 200 } });
         Velocity({
             e: text, 
@@ -29,7 +29,7 @@ export const projectMouseLeave = (project, text) => {
         Velocity(text, 'stop');
         Velocity({
             e: project, 
-            p: { scaleX: [1, 1.15], scaleY: [1, 1.15] },
+            p: { scaleX: [1, 1.3], scaleY: [1, 1.3] },
             o: { duration: 200 } });
         Velocity({e: project, p: { zIndex: 0 }, o: { duration: 1 }});
         Velocity({

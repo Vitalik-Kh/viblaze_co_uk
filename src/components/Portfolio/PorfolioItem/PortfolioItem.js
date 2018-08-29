@@ -9,8 +9,6 @@ class PortfolioItem extends React.Component {
     textRef = React.createRef();
     contentRef = React.createRef();
 
-    //HoverAnim = new hoverAnim();
-
     mouseEnterHandler = () => {
         projectMouseEnter(this.contentRef.current, this.textRef.current)
     }

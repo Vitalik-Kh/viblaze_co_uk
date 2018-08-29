@@ -13,7 +13,7 @@
         width: 100%;
         animation: messageIn 3s forwards;
         opacity: 0;
-        font-size: 1.7rem;
+        font-size: 1.2rem;
         text-align: center;
         color: #fff;
         font-family: 'Mada', sans-serif;
@@ -35,6 +35,13 @@
     to { opacity: 1 }
 }
 
+@media screen and (min-width: 400px) {
+    .Message {
+        h3 {
+            font-size: 1.7rem;
+        }
+    }
+}
 
 @media screen and (min-width: 700px) {
     .Message {

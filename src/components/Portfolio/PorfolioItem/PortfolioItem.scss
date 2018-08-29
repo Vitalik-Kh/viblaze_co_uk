@@ -14,10 +14,6 @@ $item_width: $cont-max-width/3;
         transform: scale(1,1);
         transition: box-shadow 0.1s;
         transition-delay: 0.2s;
-
-        &:hover {
-            box-shadow: 0 2px 8px rgba(black, 0.5);
-        }
     }
 
     img {

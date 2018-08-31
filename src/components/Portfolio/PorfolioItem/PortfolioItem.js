@@ -3,7 +3,7 @@ import classes from './PortfolioItem.scss';
 import PlayBtn from '../../UI/PlayBtn/PlayBtn';
 import SrcCodeBtn from '../../UI/SrcCodeBtn/SrcCodeBtn';
 import { projectMouseEnter, projectMouseLeave } from '../../../animation/portfolioAnim';
-import ScrollShow from '../../../hoc/ScrollReveal/ScrollShow';
+import ScrollShow from '../../../hoc/ScrollShow/ScrollShow';
 
 class PortfolioItem extends React.Component {
 
@@ -21,7 +21,7 @@ class PortfolioItem extends React.Component {
     render() {
 
         return (
-            <ScrollShow effect='transition.slideUpBigIn' duration={ 1000 } id='project item' delay={ 200 }>
+            //<ScrollShow effect='transition.slideUpBigIn' duration={ 1000 } id='project item' delay={ 200 }>
                 <div className={ classes.PortfolioItem }>
                     <div 
                         className = { classes.Content } 
@@ -43,7 +43,7 @@ class PortfolioItem extends React.Component {
                         </div>
                     </div>
                 </div>
-            </ScrollShow>
+            //</ScrollShow>
         );
     }
 }

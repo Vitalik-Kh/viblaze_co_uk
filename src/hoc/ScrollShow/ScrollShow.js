@@ -1,5 +1,4 @@
 import React from 'react';
-import { VelocityComponent } from 'velocity-react';
 import Velocity from 'velocity-animate';
 
 class ScrollShow extends React.Component {
@@ -8,35 +7,36 @@ class ScrollShow extends React.Component {
     }
 
     ref = React.createRef();
-    children = null
+    children = null;
 
     componentDidMount = () => {
         this.children = this.ref.current.children;
-        window.addEventListener('scroll', this.scrollHandler);
-        console.log(window.innerHeight, 'innerHeight');
+        console.log(this.children);
+        window.addEventListener('scroll', this.animate);
         Velocity(this.children, {opacity: 0}, {duration: 1});
+        this.animate();
     }
 
     componentWillUnmount = () => {
-        window.removeEventListener('scroll', this.scrollHandler);
+        window.removeEventListener('scroll', this.animate);
     }
 
-    scrollHandler = (event) => {
-        const bounding = this.children[0].getBoundingClientRect();
-        console.log('left:',bounding.left,'right:', bounding.right,'top:', bounding.top,'bottom:', bounding.bottom);
+    isInView = (bounding) => {
         if (
             bounding.top >= 0 &&
             bounding.left >= 0 &&
-            // bounding.right <= (window.innerWidth || document.documentElement.clientWidth) &&
             bounding.top <= (window.innerHeight || document.documentElement.clientHeight)
-        ) {
-            
+        ) { return true } else { return false }
+    }
+
+    animate = (event) => {
+        const bounding = this.children[0].getBoundingClientRect();
+        if ( this.isInView(bounding) ) {
            if (!this.state.inView) {
                this.setState({ inView: true });
-               console.log('can see', this.props.id);
                 //if you have few elements for a stagger effect
                 if (this.props.stagger) {
-                    console.log('stagger is on');
+                    console.log(this.children);
                     Velocity(
                         this.children, 
                         this.props.effect, 
@@ -44,7 +44,7 @@ class ScrollShow extends React.Component {
                             stagger: this.props.stagger || 200, 
                             drag: this.props.drag || false,
                             backwards: this.props.backwards || false,
-                            delay: this.props.delay || null,
+                            //delay: this.props.delay || null,
                             complete: () => {
                                 for(let i=0; i<this.children.length; i++) {
                                     this.children[i].removeAttribute('style');
@@ -75,17 +75,12 @@ class ScrollShow extends React.Component {
                         });
                 }                   
            }
-        } else {
-            // if (this.state.inView) {
-            //     console.log('set to false');
-            //     this.setState({ inView: false });
-            // }
         }
     }
 
     render() {
         return (
-                <div ref={ this.ref }> 
+                <div ref={ this.ref } className={ this.props.className || null }> 
                     { this.props.children }
                 </div>
         );

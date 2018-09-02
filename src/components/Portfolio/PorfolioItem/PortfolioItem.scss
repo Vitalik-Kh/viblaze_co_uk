@@ -40,16 +40,19 @@ $item_width: $cont-max-width/3;
             padding: 0 16px 16px 16px;
             font-size: 1em;
             
-            h3 { margin: 0 0 4px; font-size: 1em; font-weight: normal; }
+            h3 { margin: 0 0 4px; font-size: 1em; font-weight: normal; backface-visibility: hidden; }
     
-            p { margin: 0; font-size: 0.7em; }
+            p { margin: 0; font-size: 0.7em; backface-visibility: hidden; }
 
             .BtnsContainer {
+
                 a { 
                     display: block; 
                     text-decoration: none;
                     float: left;
-                    padding: 0 3px;
+                    margin: 0 3px 8px;
+
+                    svg { display: block; }
                 }
 
                 &:after {

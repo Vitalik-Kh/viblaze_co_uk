@@ -92,7 +92,7 @@ class Portfolio extends React.Component {
         return (
             <section className={ classes.Portfolio }>
                 <div className={ classes.Container }>
-                    <ScrollShow id='My Work' effect='transition.slideUpBigIn' duration={ 1000 } delay={200}> 
+                    <ScrollShow id='My Work' effect='transition.bounceIn' duration={ 1000 } delay={200}> 
                         <h2>My Work</h2> 
                     </ScrollShow>
                     { portfolio_items }

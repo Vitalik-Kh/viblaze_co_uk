@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 72">
+  <g>
+      <path fill='#ec5b5b' d="M72 5H7l5.735 64.421L39.5 77l26.765-7.579L72 5z" transform="translate(-7 -5)"/>
+      <path fill='#f38d8d' d="M24 8v60.442l21.412-6.063L50.191 8z" transform="translate(8.5 -2.316)"/>
+      <path fill='#ffecec' d="M38.325 207.108l-.025-7.585s7.878 2.2 12.341 3.336l.075-33.159h6.357v42.424z" transform="translate(-27.505 -155.069)"/>
+      <path fill='#fff' d="M392 1697h20.341v6.84h-14.166v12.24l12.35-1.8-1.816 20.88-16.709 4.32v-7.56l12.35-2.88v-6.48l-12.35 2.52z" transform="translate(-356.403 -1682.6)"/>
+  </g>
+</svg>

@@ -138,6 +138,10 @@ module.exports = {
               name: 'static/media/[name].[hash:8].[ext]',
             },
           },
+          {
+            test: /\.svg$/,
+            loader: require.resolve('@svgr/webpack')
+          },
           // Process JS with Babel.
           {
             test: /\.(js|jsx|mjs)$/,

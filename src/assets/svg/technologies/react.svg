@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 68">
+  <g data-name="Group 26" transform="translate(-394 351.097)">
+    <ellipse data-name="Ellipse 5" cx="5.739" cy="5.693" rx="5.739" ry="5.693" transform="translate(420.825 -322.79)" fill="#fff"/>
+    <ellipse data-name="Ellipse 6" cx="5.739" cy="5.693" rx="5.739" ry="5.693" transform="translate(420.825 -322.79)" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" fill="none" stroke="#fff"/>
+    <path data-name="Path 58" d="M415.844-323.231672c8.928058-15.337402 20.945652-25.034364 26.841622-21.656782s3.439964 18.548904-5.488094 33.886306-20.944786 25.034864-26.842122 21.657648-3.439098-18.548404 5.488594-33.887172z" stroke-width="2.0429591400000002" fill="none" stroke="#fff"/>
+    <path data-name="Path 59" d="M458.129-317.677c0 6.75-14.144 12.229-31.564 12.229S395-310.927 395-317.677s14.144-12.229 31.564-12.229 31.565 5.479 31.565 12.229z" stroke-width="2.019" fill="none" stroke="#fff"/>
+    <path data-name="Path 60" d="M410.368406-344.8505c5.9008-3.379216 17.913564 6.31938 26.842122 21.657648s11.3811 30.51159 5.488594 33.887172-17.914064-6.320246-26.842122-21.657648-11.3816-30.512456-5.488594-33.887172z" stroke-width="1.99996" fill="none" stroke="#fff"/>
+  </g>
+</svg>

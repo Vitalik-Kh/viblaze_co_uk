@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 27">
+  <g id="icons8-npm">
+    <path id="Path_15" data-name="Path 15" d="M0 15h65v22.95H32.5V42H17.6v-4.05H0z" transform="translate(0 -15)" fill="#fff"/>
+    <path fill='#de4a4a' d="M3 32.85h6.771v-10.8h4.062v10.8h2.708V18H3z" transform="translate(1.063 -13.95)"/>
+    <path fill='#de4a4a' d="M16 18v18.9h6.771v-4.05h6.771V18zm10.833 10.8h-4.062v-6.75h4.063z" transform="translate(5.667 -13.95)"/>
+    <path fill='#de4a4a' d="M29 18v14.85h6.771v-10.8h4.063v10.8H43.9v-10.8h4.062v10.8h2.708V18z" transform="translate(10.271 -13.95)"/>
+  </g>
+</svg>

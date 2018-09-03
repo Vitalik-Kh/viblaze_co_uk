@@ -12,6 +12,14 @@ $cont-max-width: 1000px;
 //partials
 %container { 
     max-width: $cont-max-width;
-    padding: 80px 14px;
+    padding: 100px 28px 120px;
     margin: 0 auto;
+
+    h2 { 
+        margin: 0 0 74px; 
+        text-align: center; 
+        color: $text-gray; 
+        font-weight: normal;
+        font-size: 1.7em; 
+    }
 }

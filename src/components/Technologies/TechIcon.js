@@ -1,4 +1,7 @@
 import React from 'react';
+import classes from './TechIcon.scss';
+import { tooltipMouseEnter, tooltipMouseLeave } from '../../animation/toolTipAnim';
+
 import Ai from '../../assets/svg/technologies/ai.svg';
 import Bootstrap from '../../assets/svg/technologies/bootstrap.svg';
 import Css from '../../assets/svg/technologies/css.svg';
@@ -14,25 +17,55 @@ import Sass from '../../assets/svg/technologies/sass.svg';
 import Webpack from '../../assets/svg/technologies/webpack.svg';
 import Xd from '../../assets/svg/technologies/xd.svg';
 
-const svgEl = (props) => {
-    const icon = {
-        ai: <Ai />,
-        bootstrap: <Bootstrap />,
-        css: <Css />,
-        git: <Git />,
-        html: <Html />,
-        jest: <Jest />,
-        jquery: <Jquery />,
-        js: <Js />,
-        npm: <Npm />,
-        react: <ReactIcon />,
-        redux: <Redux />,
-        sass: <Sass />,
-        webpack: <Webpack />,
-        xd: <Xd />
+class SvgEl extends React.Component {
+
+    mouseEnterHandler = () => {
+        console.log('been called')
+        tooltipMouseEnter(this.tooltipRef.current);
+        
     }
 
-    return icon[props.name];
+    mouseLeaveHandler = () => {
+        tooltipMouseLeave(this.tooltipRef.current);
+    }
+
+    icon = {
+        ai: { el: <Ai />, title: 'Illustrator' },
+        bootstrap: { el: <Bootstrap />, title: 'Bootstrap' },
+        css: { el: <Css />, title: 'CSS' },
+        git: { el: <Git />, title: 'Git' },
+        html: { el: <Html />, title: 'HTML' },
+        jest: { el: <Jest />, title: 'Jest' },
+        jquery: { el: <Jquery />, title: 'jQuery' },
+        js: { el: <Js />, title: 'JavaScript' },
+        npm: { el: <Npm />, title: 'Npm' },
+        react: { el: <ReactIcon />, title: 'React' },
+        redux: { el: <Redux />, title: 'Redux' },
+        sass: { el: <Sass />, title: 'Sass' },
+        webpack: { el: <Webpack />, title: 'Webpack' },
+        xd: { el: <Xd />, title: 'Xd' }
+    }
+
+    tooltipRef = React.createRef();
+    
+    render() {
+        return (
+            <div 
+                onMouseEnter={ this.mouseEnterHandler }
+                onMouseLeave={ this.mouseLeaveHandler } 
+                className={ classes.TechIcon }>
+                <div 
+                    ref={ this.tooltipRef } 
+                    className={ classes.Tooltip }
+                >
+                    { this.icon[this.props.name].title }
+                </div>
+                { this.icon[this.props.name].el }
+            </div>
+        )
+    }
+
+    
 }
 
-export default svgEl;
+export default SvgEl;

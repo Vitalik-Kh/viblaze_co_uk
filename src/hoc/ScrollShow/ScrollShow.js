@@ -11,7 +11,6 @@ class ScrollShow extends React.Component {
 
     componentDidMount = () => {
         this.children = this.ref.current.children;
-        console.log(this.children);
         window.addEventListener('scroll', this.animate);
         Velocity(this.children, {opacity: 0}, {duration: 1});
         this.animate();
@@ -36,7 +35,6 @@ class ScrollShow extends React.Component {
                this.setState({ inView: true });
                 //if you have few elements for a stagger effect
                 if (this.props.stagger) {
-                    console.log(this.children);
                     Velocity(
                         this.children, 
                         this.props.effect, 

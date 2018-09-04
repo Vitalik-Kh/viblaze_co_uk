@@ -3,7 +3,6 @@ import classes from './PortfolioItem.scss';
 import PlayBtn from '../../UI/PortfolioItem/PlayBtn/PlayBtn';
 import SrcCodeBtn from '../../UI/PortfolioItem/SrcCodeBtn/SrcCodeBtn';
 import { projectMouseEnter, projectMouseLeave } from '../../../animation/portfolioAnim';
-import ScrollShow from '../../../hoc/ScrollShow/ScrollShow';
 
 class PortfolioItem extends React.Component {
 

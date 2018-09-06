@@ -57,7 +57,7 @@ class RollInText extends React.Component {
             let do_cycles = false;
             let output = ''
             for (let i=0; i<messageBuffer.length; i++) {
-                const currIndex =messageBuffer[i];
+                const currIndex = messageBuffer[i];
                 if (currIndex.cycles > 0) {
                     do_cycles = true;
                     currIndex.cycles--;

@@ -8,12 +8,14 @@ Velocity.RegisterEffect('tooltipSlideIn', {
     ]
 })
 
-export const tooltipMouseEnter = (el) => {
+export const tooltipMouseEnter = (tooltip, icon) => {
     timer = setTimeout(() => {
         timer = null;
-        Velocity(el, 'stop');
+        Velocity(tooltip, 'stop');
+        Velocity(icon, 'stop');
+        Velocity(icon, { scaleX: [1.1, 1], scaleY: [1.1, 1] }, 300);
         Velocity(
-            el, 
+            tooltip, 
             { 
                 translateX: ['-50%', '-50%'], 
                 translateY: ['0px', '15px'], 
@@ -26,11 +28,14 @@ export const tooltipMouseEnter = (el) => {
     }, 300);
 }
 
-export const tooltipMouseLeave = (el) => {
+export const tooltipMouseLeave = (tooltip, icon) => {
     if (timer !== null) {
         clearTimeout(timer);
         timer = null;
     } else {
-        Velocity(el, 'transition.fadeOut', 500);
+        Velocity(tooltip, 'stop');
+        Velocity(icon, 'stop');
+        Velocity(icon, { scaleX: [1, 1.1], scaleY: [1, 1.1] }, 300);
+        Velocity(tooltip, 'transition.fadeOut', 500);
     }
 }

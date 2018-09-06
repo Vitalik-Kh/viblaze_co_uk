@@ -20,13 +20,12 @@ import Xd from '../../assets/svg/technologies/xd.svg';
 class SvgEl extends React.Component {
 
     mouseEnterHandler = () => {
-        console.log('been called')
-        tooltipMouseEnter(this.tooltipRef.current);
+        tooltipMouseEnter(this.tooltipRef.current, this.iconRef.current);
         
     }
 
     mouseLeaveHandler = () => {
-        tooltipMouseLeave(this.tooltipRef.current);
+        tooltipMouseLeave(this.tooltipRef.current, this.iconRef.current);
     }
 
     icon = {
@@ -43,10 +42,11 @@ class SvgEl extends React.Component {
         redux: { el: <Redux />, title: 'Redux' },
         sass: { el: <Sass />, title: 'Sass' },
         webpack: { el: <Webpack />, title: 'Webpack' },
-        xd: { el: <Xd />, title: 'Xd' }
+        xd: { el: <Xd />, title: 'Adobe Xd' }
     }
 
     tooltipRef = React.createRef();
+    iconRef = React.createRef();
     
     render() {
         return (
@@ -60,7 +60,10 @@ class SvgEl extends React.Component {
                 >
                     { this.icon[this.props.name].title }
                 </div>
-                { this.icon[this.props.name].el }
+                <div ref= { this.iconRef }>
+                    { this.icon[this.props.name].el }
+                </div>
+                
             </div>
         )
     }

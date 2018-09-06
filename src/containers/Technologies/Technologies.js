@@ -25,7 +25,7 @@ class Technologies extends React.Component {
         return (
             <section className={ classes.Technologies }>
                 <div className={ classes.Container }>
-                    <ScrollShow id='Technologies' effect='transition.bounceIn' duration={ 1000 } delay={200}> 
+                    <ScrollShow effect='transition.bounceIn' duration={ 1000 } delay={ 200 }> 
                         <h2>Technologies I use</h2> 
                     </ScrollShow>
                     <div className={ classes.Icons}>

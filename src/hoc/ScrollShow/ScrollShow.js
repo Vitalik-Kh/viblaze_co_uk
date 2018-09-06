@@ -12,8 +12,16 @@ class ScrollShow extends React.Component {
     componentDidMount = () => {
         this.children = this.ref.current.children;
         window.addEventListener('scroll', this.animate);
-        Velocity(this.children, {opacity: 0}, {duration: 1});
+        for(let i=0; i<this.children.length; i++) {
+            this.children[i].style.opacity = 0;
+        }
         this.animate();
+    }
+
+    componentDidUpdate = () => {
+        if (this.state.inView) {
+            window.removeEventListener('scroll', this.animate);
+        }
     }
 
     componentWillUnmount = () => {
@@ -42,14 +50,15 @@ class ScrollShow extends React.Component {
                             stagger: this.props.stagger || 200, 
                             drag: this.props.drag || false,
                             backwards: this.props.backwards || false,
-                            //delay: this.props.delay || null,
+                            delay: this.props.delay || null,
                             complete: () => {
                                 for(let i=0; i<this.children.length; i++) {
                                     this.children[i].removeAttribute('style');
                                 }
-                                if (this.complete) {
-                                    this.complete();
+                                if (this.props.complete) {
+                                    this.props.complete();
                                 }
+                                console.log('stagger done')
                             },
                             easing: this.props.easing || 'ease-in-out'
                         }); 
@@ -65,9 +74,11 @@ class ScrollShow extends React.Component {
                                 for(let i=0; i<this.children.length; i++) {
                                     this.children[i].removeAttribute('style');
                                 }
-                                if (this.complete) {
-                                    this.complete();
+                                if (this.props.complete) {
+                                    this.props.complete();
+                                    
                                 }
+                                console.log('done')
                             },
                             easing: this.props.easing || 'ease-in-out'
                         });

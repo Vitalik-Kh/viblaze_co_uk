@@ -1,0 +1,97 @@
+.About {
+    width: 100%;
+    overflow: hidden;
+
+    .Container {
+        @extend %container;
+        position: relative;
+        overflow: hidden;
+        padding-bottom: 0;
+
+        .Content {
+            width: 100%;
+        }
+
+        .Text {
+            p {
+                color: $text-lightgray;
+            }
+
+            .SocialIcons {
+                margin-top: 2em;
+                width: 170px;
+                display: flex;
+                justify-content: space-between;
+    
+    
+                svg {
+                    width: 30px;
+                    height: 30px;
+                    cursor: pointer;
+
+                }
+
+                a {
+                    transition: transform .2s;
+
+                    &:hover {
+                        transform: scale(1.1, 1.1);
+                    }
+                }
+            }
+        }
+
+        .PhotoOfMe {
+            margin-top: 4em;
+            height: 220px;
+
+            img {
+                display: block;
+                width: 220px;
+                margin: auto;
+            }
+            
+        }
+    }
+}
+
+@media screen and (min-width: 360px) {
+    .PhotoOfMe {
+        img {
+            position: absolute;
+            right: 15%;
+        }
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .PhotoOfMe {
+        margin-top: 1em !important;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .About .Container{
+        padding-left: 72px;
+        padding-right: 72px;
+    }
+}
+
+@media screen and (min-width: 750px) {
+    .Text {
+        float: right;
+        width: 70%;
+        padding-bottom: 120px;
+    }
+
+    .PhotoOfMe {
+        margin-top: 0 !important;
+        position: absolute;
+        bottom: 0;
+        left: 72px;
+    
+        img {
+            position: static;
+        }
+    }
+}

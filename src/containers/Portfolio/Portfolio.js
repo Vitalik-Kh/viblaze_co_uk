@@ -3,10 +3,19 @@ import classes from './Portfolio.scss';
 import PortfolioItem from '../../components/Portfolio/PorfolioItem/PortfolioItem';
 import projects from '../../constants/projects';
 import ScrollShow from '../../hoc/ScrollShow/ScrollShow';
+import Title from '../../components/UI/Title/Title';
+import withRefs from '../../hoc/WithRefs';
+import scrollToAnim from '../../animation/scrollToAnim';
 
 class Portfolio extends React.Component {
     state = {
         windowWidth: null
+    }
+
+    sectionRef = React.createRef();
+
+    scrollIn = () => {
+        scrollToAnim(this.sectionRef.current);
     }
 
     componentDidMount = () => {
@@ -90,16 +99,9 @@ class Portfolio extends React.Component {
         }
 
         return (
-            <section className={ classes.Portfolio }>
+            <section className={ classes.Portfolio } ref={ this.sectionRef }>
                 <div className={ classes.Container }>
-                    <ScrollShow 
-                        effect='transition.bounceIn' 
-                        duration={ 1000 } 
-                        delay={200}
-                        complete={()=>{console.log('title visible')}}
-                    > 
-                        <h2>My Work</h2> 
-                    </ScrollShow>
+                    <Title>My work</Title>
                     { portfolio_items }
                 </div>
             </section>
@@ -107,4 +109,4 @@ class Portfolio extends React.Component {
     }
 }
 
-export default Portfolio;
+export default withRefs(Portfolio);

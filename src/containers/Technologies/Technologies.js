@@ -2,8 +2,16 @@ import React from 'react';
 import classes from './Technologies.scss';
 import ScrollShow from '../../hoc/ScrollShow/ScrollShow';
 import TechIcon from '../../components/Technologies/TechIcon';
+import Title from '../../components/UI/Title/Title';
+import withRefs from '../../hoc/WithRefs';
+import scrollToAnim from '../../animation/scrollToAnim';
 
 class Technologies extends React.Component {
+    sectionRef = React.createRef();
+
+    scrollIn = () => {
+        scrollToAnim(this.sectionRef.current);
+    }
 
     render() {
         const iconsNames = ['js', 'html', 'css', 'react', 'redux', 'webpack', 
@@ -23,11 +31,9 @@ class Technologies extends React.Component {
         })
 
         return (
-            <section className={ classes.Technologies }>
+            <section className={ classes.Technologies } ref={ this.sectionRef }>
                 <div className={ classes.Container }>
-                    <ScrollShow effect='transition.bounceIn' duration={ 1000 } delay={ 200 }> 
-                        <h2>Technologies I use</h2> 
-                    </ScrollShow>
+                    <Title>Technologies I use</Title>
                     <div className={ classes.Icons}>
                         { icons }
                     </div>
@@ -37,4 +43,4 @@ class Technologies extends React.Component {
     }
 }
 
-export default Technologies;
+export default withRefs(Technologies);

@@ -50,7 +50,6 @@ class ScrollShow extends React.Component {
                             stagger: this.props.stagger || 200, 
                             drag: this.props.drag || false,
                             backwards: this.props.backwards || false,
-                            delay: this.props.delay || null,
                             complete: () => {
                                 for(let i=0; i<this.children.length; i++) {
                                     this.children[i].removeAttribute('style');

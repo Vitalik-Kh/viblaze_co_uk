@@ -2,7 +2,6 @@ import React from 'react';
 import classes from './MenuBar.scss';
 
 const menuBar = (props) => {
-    console.log(props);
     return (
         <div className={ classes.MenuBar }>
             <ul>

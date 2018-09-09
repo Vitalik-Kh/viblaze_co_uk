@@ -68,7 +68,7 @@ class About extends React.Component {
                             duration='1000'
                             delay='200'>
                             
-                            <img src={ photoOfMeSrc } alt='Photo of me' />
+                            <img src={ photoOfMeSrc } alt='Vitalii - developer' />
                         </ScrollShow>
                     </div>
                 </div>

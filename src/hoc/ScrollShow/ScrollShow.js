@@ -57,7 +57,6 @@ class ScrollShow extends React.Component {
                                 if (this.props.complete) {
                                     this.props.complete();
                                 }
-                                console.log('stagger done')
                             },
                             easing: this.props.easing || 'ease-in-out'
                         }); 
@@ -77,7 +76,6 @@ class ScrollShow extends React.Component {
                                     this.props.complete();
                                     
                                 }
-                                console.log('done')
                             },
                             easing: this.props.easing || 'ease-in-out'
                         });

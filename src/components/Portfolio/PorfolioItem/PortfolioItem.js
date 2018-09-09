@@ -28,7 +28,10 @@ class PortfolioItem extends React.Component {
                         onMouseEnter = { this.mouseEnterHandler }
                         onMouseLeave = { this.mouseLeaveHandler  }>
                         
-                        <img src={ this.props.imgSrc } alt={ this.props.title } />
+                        <img 
+                            srcSet={`${this.props.imgSrc[0]}, ${this.props.imgSrc[1]} 1.5x, ${this.props.imgSrc[2]} 2x`}
+                            src={ this.props.imgSrc[0] } 
+                            alt={ this.props.title } />
                         <div className={ classes.TextContainer } ref={ this.textRef }>
                             <div className={ classes.ItemText }>
                                 <h3>{ this.props.title }</h3>

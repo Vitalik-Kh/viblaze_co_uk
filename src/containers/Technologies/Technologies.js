@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Technologies.scss';
-import ScrollShow from '../../hoc/ScrollShow/ScrollShow';
+import ScrollShow from '../../hoc/ScrollShow';
 import TechIcon from '../../components/Technologies/TechIcon';
 import Title from '../../components/UI/Title/Title';
 import withRefs from '../../hoc/WithRefs';

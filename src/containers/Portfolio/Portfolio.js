@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './Portfolio.scss';
 import PortfolioItem from '../../components/Portfolio/PorfolioItem/PortfolioItem';
 import projects from '../../constants/projects';
-import ScrollShow from '../../hoc/ScrollShow/ScrollShow';
+import ScrollShow from '../../hoc/ScrollShow';
 import Title from '../../components/UI/Title/Title';
 import withRefs from '../../hoc/WithRefs';
 import scrollToAnim from '../../animation/scrollToAnim';

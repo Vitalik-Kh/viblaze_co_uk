@@ -1,5 +1,5 @@
 import React from 'react';
-import ScrollShow from '../../../hoc/ScrollShow/ScrollShow';
+import ScrollShow from '../../../hoc/ScrollShow';
 
 const title = (props) => {
     return (

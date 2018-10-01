@@ -3,7 +3,7 @@ import classes from './About.scss';
 import Title from '../../components/UI/Title/Title';
 import SocialIcon from '../../components/About/SocialIcon/SocialIcons';
 import photoOfMeSrc from '../../assets/imgs/PhotoOfMe.png';
-import ScrollShow from '../../hoc/ScrollShow/ScrollShow';
+import ScrollShow from '../../hoc/ScrollShow';
 import withRefs from '../../hoc/WithRefs';
 import scrollToAnim from '../../animation/scrollToAnim';
 
@@ -39,16 +39,13 @@ class About extends React.Component {
                         <div className={ classes.Text }>
                             <p> Hi, my name is Vitalii Khymynets. </p>
                             <p>   
-                                I’m a front end web developer student from Leeds, GB. 
-                                I already have gone through online courses and challenges from w3school, 
-                                freeCodeCamp, Codecademy and Udemy in HTML, CSS, JavaScript, jQuery, 
-                                Bootstrap. 
+                                I'm Front End Web Developer based in Leeds. 
+                                I enjoy building great looking web pages and applications with clean design and smooth animation. I believe that good UX and UI is a 50% of website success. 
+                                Good looking code as important to me as good looking web-pages. So high readability, good structure and scalability of code is a must.
+                                I enjoy using React as the main framework. Its declarative and modular approach gives all you need to build and maintain projects of any size.
                             </p>
                             <p>
-                                My goal is to enter a world of web development as a junior front end 
-                                developer. I’m passionate about making user-friendly products with responsive 
-                                and clear design, spiced up with interactivity, using JavaScript. I believe 
-                                that web development is the most exciting and fast growing area of programming.
+                                I'm always open to new opportunities and challenges :) 
                             </p>
 
                             <ScrollShow 

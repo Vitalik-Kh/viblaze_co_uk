@@ -20,32 +20,42 @@ class PortfolioItem extends React.Component {
     render() {
 
         return (
-            //<ScrollShow effect='transition.slideUpBigIn' duration={ 1000 } id='project item' delay={ 200 }>
-                <div className={ classes.PortfolioItem }>
-                    <div 
-                        className = { classes.Content } 
-                        ref = { this.contentRef }
-                        onMouseEnter = { this.mouseEnterHandler }
-                        onMouseLeave = { this.mouseLeaveHandler  }>
-                        
-                        <img 
-                            srcSet={`${this.props.imgSrc[0]}, ${this.props.imgSrc[1]} 1.5x, ${this.props.imgSrc[2]} 2x`}
-                            src={ this.props.imgSrc[0] } 
-                            alt={ this.props.title } />
-                        <div className={ classes.TextContainer } ref={ this.textRef }>
-                            <div className={ classes.ItemText }>
-                                <h3>{ this.props.title }</h3>
-                                <div className={ classes.BtnsContainer }>
-                                    <a className={ classes.PlayBtn } href={ this.props.playLink } title='View live'><PlayBtn /></a>
-                                    <a className={ classes.SrcCodeBtn } href={ this.props.srcLink } title='View source code'><SrcCodeBtn /></a>
-                                </div>
-                                <p>Technologies used:</p>
-                                <p>{ this.props.techs.join(' ') }</p>
+            <div className={ classes.PortfolioItem }>
+                <div 
+                    className = { classes.Content } 
+                    ref = { this.contentRef }
+                    onMouseEnter = { this.mouseEnterHandler }
+                    onMouseLeave = { this.mouseLeaveHandler  }>
+                    
+                    <img 
+                        srcSet={ `${this.props.imgSrc[0]}, ${this.props.imgSrc[1]} 1.5x, ${this.props.imgSrc[2]} 2x` }
+                        src={ this.props.imgSrc[0] } 
+                        alt={ this.props.title } />
+                    <div className={ classes.TextContainer } ref={ this.textRef }>
+                        <div className={ classes.ItemText }>
+                            <h3>{ this.props.title }</h3>
+                            <div className={ classes.BtnsContainer }>
+                                <a 
+                                    className={ classes.PlayBtn } 
+                                    href={ this.props.playLink } 
+                                    title='View live'
+                                    target='_blank' >
+                                    <PlayBtn />
+                                </a>
+                                <a 
+                                    className={ classes.SrcCodeBtn } 
+                                    href={ this.props.srcLink } 
+                                    title='View source code'
+                                    target='_blank' >
+                                    <SrcCodeBtn />
+                                </a>
                             </div>
+                            <p>Technologies used:</p>
+                            <p>{ this.props.techs.join(' ') }</p>
                         </div>
                     </div>
                 </div>
-            //</ScrollShow>
+            </div>
         );
     }
 }

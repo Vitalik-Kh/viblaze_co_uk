@@ -37,8 +37,8 @@ class Layout extends React.Component {
                     scrollToTechs={ this.state.techsRef ? this.state.techsRef.current.scrollIn : null }
                     scrollToAbout={ this.state.aboutRef ? this.state.aboutRef.current.scrollIn : null }
                 />
-                <Title ref={ this.titleRef }/>
-                <Portfolio ref={ this.portfolioRef }/>
+                <Title ref={ this.titleRef } />
+                <Portfolio ref={ this.portfolioRef } />
                 <Technologies ref={ this.techsRef } />
                 <About ref={ this.aboutRef } />
             </React.Fragment>

@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './About.scss';
 import Title from '../../components/UI/Title/Title';
 import SocialIcon from '../../components/About/SocialIcon/SocialIcons';
-import photoOfMeSrc from '../../assets/imgs/PhotoOfMe.png';
+import MyPhoto from '../../components/About/MyPhoto/MyPhoto';
 import ScrollShow from '../../hoc/ScrollShow';
 import withRefs from '../../hoc/WithRefs';
 import scrollToAnim from '../../animation/scrollToAnim';
@@ -65,7 +65,7 @@ class About extends React.Component {
                             duration='1000'
                             delay='200'>
                             
-                            <img src={ photoOfMeSrc } alt='Vitalii - developer' />
+                            <MyPhoto />
                         </ScrollShow>
                     </div>
                 </div>

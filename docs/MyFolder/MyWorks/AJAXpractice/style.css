@@ -1,0 +1,49 @@
+body {
+    padding: 25px;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+@font-face {
+    font-family: 'Titillium Web';
+    src: url(fonts/TitilliumWeb-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Titillium Web';
+    src: url(fonts/TitilliumWeb-Bold.ttf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Titillium Web';
+    src: url(fonts/TitilliumWeb-Italic.ttf);
+    font-style: italic;
+}
+
+.ajax-table, .ajax-table td, .ajax-table th {
+    border: 1px solid gray;
+    border-collapse: collapse;
+}
+
+.ajax-table td, .ajax-table th {
+    padding: 5px 10px;
+}
+
+.ajax-table tr:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+.ajax-table th:hover {
+    cursor: default;
+}
+
+.ajax-table th {
+    background: lightgrey;
+}
+
+ul#ajax-nav-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}

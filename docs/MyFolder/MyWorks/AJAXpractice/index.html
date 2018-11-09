@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+    <title>AJAX Pracitce</title>
+    <link rel='stylesheet' type='text/css' href='style.css'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta charset = 'UTF-8'>
+</head>
+<body>
+    <h2>JS AJAX Practice</h2>
+    <ul>
+        <li>
+            <p>A Simple AJAX Example</p>
+            <button onclick='ajaxTxt()'>Click</button>
+            <button onclick='clearAnsw("ajax-txt")'>Clear</button>
+            <span id='ajax-txt' class='answer'></span>
+        </li>
+        <li>
+            <p>An AJAX Example with Callback Function</p>
+            <button onclick='ajaxCallback()'>Click</button>
+            <button onclick='clearAnsw("ajax-callback")'>Clear</button>
+            <span id='ajax-callback' class='answer'></span>
+        </li>
+        <li>
+            <p>Retrieve all header information</p>
+            <button onclick='ajaxHeaders()'>Click</button>
+            <button onclick='clearAnsw("ajax-headers")'>Clear</button>
+            <span id='ajax-headers' class='answer'></span>
+        </li>
+        <li>
+            <p>Display XML data in HTML table</p>
+            <button onclick='ajaxTable()'>Click</button>
+            <button onclick='clearAnsw("ajax-table")'>Clear</button>
+            <table id='ajax-table' class='answer ajax-table'></table>
+        </li>
+        <li>
+            <p>Navigate through XML nodes</p>
+             <ul id='ajax-nav-ul'>
+                <li>d</li>
+                <li>d</li>
+                <li>d</li>
+            </ul>
+            <button onclick='ajaxBackBtn()'>back</button>
+            <button onclick='ajaxForwBtn()'>forward</button>
+           
+        </li>
+        <li>
+            <p>A simple CD catalogue</p>
+            <button onclick='ajaxCatalogue()'>Click</button>
+            <button onclick='clearAnsw("ajax-table-c")'>Clear</button>
+            <p id='ajax-catalogue'></p>
+            <table id='ajax-table-c' class='answer ajax-table'></table>
+        </li>
+    </ul>
+    
+    
+<script src='script.js'></script>
+</body>

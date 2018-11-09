@@ -15,7 +15,7 @@ function dotsAnim(dotsContainer) {
             { e: dots[0], p: { opacity: [0.9, 0] }, o: { duration: 1 } },
             { e: lastDot, p: { opacity: opacity }, o: { duration: 1 } },
 
-            { e: dots, p: { scaleX: [1, 0], scaleY: [1, 0] }, o: { duration: 1000 } },
+            { e: dots, p: { scale: 1 }, o: { duration: 1000 } },
 
             { e: lastDot, p: animProps, o: animOptions },
             { e: dots[1], p: { opacity: opacity }, o: { duration: 1 } },
@@ -39,7 +39,7 @@ function dotsAnim(dotsContainer) {
 
             { 
                 e: dots, 
-                p: { scaleX: 0, scaleY: 0 }, 
+                p: { scale: 0 }, 
                 o: { 
                     duration: 2000, 
                     complete: function() { 
@@ -66,16 +66,15 @@ function dotsAnim(dotsContainer) {
         Velocity(
             dotsContainer, 
             { 
-                top: [newTop, 0], 
-                left: [newLeft,0], 
-                rotateZ: [newRotate, '0deg'],
-                scaleX: [newSize, 1],
-                scaleY: [newSize, 1]
+                top: newTop, 
+                left: newLeft, 
+                scale: newSize,
+                rotateZ: newRotate
             }, 
             { duration: 1 });
         Velocity(
             dots, 
-            { opacity: [0, 0.5] }, 
+            { opacity: 0, scale: 0 }, 
             { duration: 1 });
         Velocity(
             dots[7], 

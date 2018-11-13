@@ -35,13 +35,12 @@ class PortfolioItem extends React.Component {
                         <div className={ classes.ItemText }>
                             <h3>{ this.props.title }</h3>
                             <div className={ classes.BtnsContainer }>
-                                <a 
-                                    className={ classes.PlayBtn } 
-                                    href={ this.props.playLink } 
-                                    title='View live'
-                                    target='_blank' >
+                                <div 
+                                    className={ classes.PlayBtn }
+                                    title='Live project'
+                                    onClick={ () => { this.props.openProject(this.props.playLink) }} >
                                     <PlayBtn />
-                                </a>
+                                </div>
                                 <a 
                                     className={ classes.SrcCodeBtn } 
                                     href={ this.props.srcLink } 

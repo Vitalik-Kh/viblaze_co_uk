@@ -4,14 +4,19 @@ import MenuBar from '../../components/MenuBar/MenuBar';
 import Portfolio from '../Portfolio/Portfolio';
 import Technologies from '../Technologies/Technologies';
 import About from '../About/About';
+import NewWindow from '../../components/NewWindow/NewWindow';
+import { VelocityTransitionGroup } from 'velocity-react';
 
 class Layout extends React.Component {
     state = {
         titleRef: null,
         portfolioRef: null,
         techsRef: null,
-        aboutRef: null
+        aboutRef: null,
+        newWindowIsOn: false
     }
+
+    newWindowSrc = ''
     
     titleRef = React.createRef();
     portfolioRef = React.createRef();
@@ -27,10 +32,28 @@ class Layout extends React.Component {
         })
     }
 
+    closeNewWindow = () => {
+        this.setState({ newWindowIsOn: false });
+    }
+
+    openNewWindow = (link) => {
+        this.newWindowSrc = link;
+        this.setState({ newWindowIsOn: true });
+    }
+
     render() {
 
         return (
             <React.Fragment>
+                <VelocityTransitionGroup 
+                    enter={{animation: "transition.fadeIn"}} 
+                    leave={{animation: "transition.fadeOut"}}
+                    runOnMount >
+                    { this.state.newWindowIsOn ? 
+                        <NewWindow closeWindow={ this.closeNewWindow } src={ this.newWindowSrc }/> : 
+                        null }
+                </VelocityTransitionGroup>
+                
                 <MenuBar 
                     scrollToTitle={ this.state.titleRef ? this.state.titleRef.current.scrollIn : null }
                     scrollToPortfolio={ this.state.portfolioRef ? this.state.portfolioRef.current.scrollIn : null }
@@ -38,7 +61,7 @@ class Layout extends React.Component {
                     scrollToAbout={ this.state.aboutRef ? this.state.aboutRef.current.scrollIn : null }
                 />
                 <Title ref={ this.titleRef } />
-                <Portfolio ref={ this.portfolioRef } />
+                <Portfolio openNewWindow={ this.openNewWindow } ref={ this.portfolioRef } />
                 <Technologies ref={ this.techsRef } />
                 <About ref={ this.aboutRef } />
             </React.Fragment>

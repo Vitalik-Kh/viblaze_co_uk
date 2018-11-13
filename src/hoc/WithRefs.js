@@ -3,9 +3,9 @@ import React from 'react';
 function withRefs(Component) {
     class WithRefs extends React.Component {
         render() {
-            const { forwardedRef } = this.props;
+            const { forwardedRef, ...rest } = this.props;
 
-            return <Component ref={ forwardedRef } />
+            return <Component ref={ forwardedRef } {...rest} />
         }
     }
 

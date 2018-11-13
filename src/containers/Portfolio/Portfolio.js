@@ -42,7 +42,8 @@ class Portfolio extends React.Component {
                 imgSrc = { projectData.imgSrc }
                 techs = { projectData.techs }
                 playLink = { projectData.playLink }
-                srcLink = { projectData.srcLink } />
+                srcLink = { projectData.srcLink }
+                openProject = { this.props.openNewWindow } />
     }
 
     createProjectsRow = (index, columns) => {

@@ -1,0 +1,66 @@
+.NewWindow {
+    position: fixed;
+    width: 94%;
+    height: 94vh;
+    z-index: 200;
+    margin-left: 3%;
+    margin-top: 3vh;
+    box-shadow: 0 4px 12px rgba(black, .6);
+    
+
+    iframe {
+        width: 100%;
+        height: calc(100% - 26px);
+        border: none;
+        position: absolute;
+        top: 26px;
+        background: #fff;
+    }
+
+    .TopBar {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        height: 26px;
+        background: rgba(gray, 1);
+
+        .CloseBtn {         
+            position: absolute;
+            right: 10px;
+            top: 5px;
+            width: 16px;
+            height: 16px;   
+            cursor: pointer;
+
+            path {
+                fill: #fff;
+            }
+
+            &:hover {
+                path {
+                    fill: $main-red;
+                }
+            }
+        }
+
+        .NewWindowBtn {         
+            position: absolute;
+            right: 44px;
+            top: 5px;
+            width: 16px;
+            height: 16px;   
+            cursor: pointer;
+
+            svg path {
+                fill: #fff;
+            }
+
+            &:hover {
+                path {
+                    fill: $green;
+                }
+            }
+        }
+    }
+
+}

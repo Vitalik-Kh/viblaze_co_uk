@@ -45,11 +45,11 @@ $item_width: $cont-max-width/3;
 
             .BtnsContainer {
 
-                a { 
+                .PlayBtn, .SrcCodeBtn { 
                     display: block; 
-                    text-decoration: none;
                     float: left;
                     margin: 0 3px 8px;
+                    cursor: pointer;
 
                     svg { display: block; }
                 }

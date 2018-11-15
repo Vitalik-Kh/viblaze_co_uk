@@ -4,7 +4,6 @@ import CloseBtn from './Btns/CloseBtn';
 import NewWindowBtn from './Btns/NewWindowBtn';
 
 const newWindow = (props) => {
-
     return (
         <div className = { classes.NewWindow }>
             <div className={ classes.TopBar }>
@@ -13,9 +12,15 @@ const newWindow = (props) => {
                 </a> 
                 <CloseBtn className={ classes.CloseBtn } closeWindow={ props.closeWindow } />
             </div>
-            <iframe src={ props.src }></iframe>
+            {
+                props.isAnimatedIn ?
+                <iframe src={ props.src } title={ props.title } ></iframe> :
+                null
+            }
+            
         </div>
     );
+    
 }
 
 export default newWindow;

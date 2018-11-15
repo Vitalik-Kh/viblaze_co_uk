@@ -38,7 +38,7 @@ class PortfolioItem extends React.Component {
                                 <div 
                                     className={ classes.PlayBtn }
                                     title='Live project'
-                                    onClick={ () => { this.props.openProject(this.props.playLink) }} >
+                                    onClick={ () => { this.props.openProject(this.props.playLink, this.props.title) }} >
                                     <PlayBtn />
                                 </div>
                                 <a 

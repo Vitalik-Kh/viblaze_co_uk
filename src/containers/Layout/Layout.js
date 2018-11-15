@@ -5,7 +5,9 @@ import Portfolio from '../Portfolio/Portfolio';
 import Technologies from '../Technologies/Technologies';
 import About from '../About/About';
 import NewWindow from '../../components/NewWindow/NewWindow';
-import { VelocityTransitionGroup } from 'velocity-react';
+import ModalBackground from '../../components/UI/Modal/ModalBackground'
+import Transition from 'react-transition-group/Transition';
+import Velocity from 'velocity-animate';
 
 class Layout extends React.Component {
     state = {
@@ -13,10 +15,14 @@ class Layout extends React.Component {
         portfolioRef: null,
         techsRef: null,
         aboutRef: null,
-        newWindowIsOn: false
+        newWindowRef: null,
+        newWindowIsUp: false,
+        newWindowAnimatedIn: false
     }
 
-    newWindowSrc = ''
+    newWindowSrc = '';
+
+    newWindowTitle = '';
     
     titleRef = React.createRef();
     portfolioRef = React.createRef();
@@ -28,31 +34,61 @@ class Layout extends React.Component {
             titleRef: this.titleRef,
             portfolioRef: this.portfolioRef,
             techsRef: this.techsRef,
-            aboutRef: this.aboutRef
+            aboutRef: this.aboutRef,
         })
     }
 
     closeNewWindow = () => {
-        this.setState({ newWindowIsOn: false });
+        this.setState({ newWindowIsUp: false });
     }
 
-    openNewWindow = (link) => {
+    openNewWindow = (link, title) => {
         this.newWindowSrc = link;
-        this.setState({ newWindowIsOn: true });
+        this.newWindowTitle = title;
+        this.setState({ newWindowIsUp: true });
     }
 
     render() {
 
         return (
             <React.Fragment>
-                <VelocityTransitionGroup 
-                    enter={{animation: "transition.fadeIn"}} 
-                    leave={{animation: "transition.fadeOut"}}
-                    runOnMount >
-                    { this.state.newWindowIsOn ? 
-                        <NewWindow closeWindow={ this.closeNewWindow } src={ this.newWindowSrc }/> : 
-                        null }
-                </VelocityTransitionGroup>
+                <Transition 
+                    in = { this.state.newWindowIsUp } 
+                    timeout={400}
+                    mountOnEnter
+                    unmountOnExit
+                    onEnter = { (el) => {
+                        Velocity(el, 'transition.expandIn', 400 )
+                    }}
+                    onEntered = { () => {
+                        this.setState({ newWindowAnimatedIn: true })
+                    }}
+                    onExit = { (el) => {
+                        Velocity(el, 'transition.fadeOut', 200 )
+                    }}
+                    onExited = { () => {
+                        this.setState({ newWindowAnimatedIn: false })
+                    }} >
+                        <NewWindow
+                            closeWindow = { this.closeNewWindow }
+                            src = { this.newWindowSrc }
+                            title = { this.newWindowTitle }
+                            isAnimatedIn = { this.state.newWindowAnimatedIn } />         
+                </Transition>
+
+                <Transition 
+                    in = { this.state.newWindowIsUp } 
+                    timeout={400}
+                    mountOnEnter
+                    unmountOnExit
+                    onEnter = { (el) => {
+                        Velocity(el, 'transition.fadeIn', 400 )
+                    }}
+                    onExit = { (el) => {
+                        Velocity(el, 'transition.fadeOut', 200 )
+                    }} >
+                        <ModalBackground />         
+                </Transition>
                 
                 <MenuBar 
                     scrollToTitle={ this.state.titleRef ? this.state.titleRef.current.scrollIn : null }

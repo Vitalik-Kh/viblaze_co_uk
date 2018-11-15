@@ -19,8 +19,8 @@ class App extends Component {
     <Greeting onGreetingComplete = { this.onGreetingComplete } />;
     return (
       <div className="App">
-        <Layout />
-        {/* { page } */}
+        {/* <Layout /> */}
+        { page }
       </div>
     );
   }

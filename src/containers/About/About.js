@@ -39,9 +39,9 @@ class About extends React.Component {
                         <div className={ classes.Text }>
                             <p> Hi, my name is Vitalii Khymynets. </p>
                             <p>   
-                                I'm Front End Web Developer based in Leeds. 
-                                I enjoy building great looking web pages and applications with clean design and smooth animation. I believe that good UX and UI is a 50% of website success. 
-                                Good looking code as important to me as good looking web-pages. So high readability, good structure and scalability of code is a must.
+                                I'm a Front End Web Developer based in Leeds.
+                                I enjoy building great looking web-pages and applications with clean design and smooth animation. I believe that good UX and UI is responsible for 50% of a website's success. 
+                                Good looking code is as important to me as good looking web-pages. So high readability, good structure and scalability of code is a must.
                                 I enjoy using React as the main framework. Its declarative and modular approach gives all you need to build and maintain projects of any size.
                             </p>
                             <p>

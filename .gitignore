@@ -6,8 +6,8 @@
 # testing
 /coverage
 
-# production
-/build
+# projects media files
+/MyFolder
 
 # misc
 .DS_Store

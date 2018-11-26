@@ -4,7 +4,7 @@ import randomizer from '../../../../utility/randomizer';
 
 class RollInText extends React.Component {
     state = {
-        messages: ''
+        message: ''
     }
 
     componentDidMount = () => {
@@ -15,32 +15,31 @@ class RollInText extends React.Component {
         const symbols = '£+#*%&?§$';
         let current_length = 0;
         let messageBuffer = null;
-        const speed = 50;
-        
+        const speed = 50;        
         
         const generateRandomString = (length) => {
             let string = '';
             while(string.length < length) {
                 string += symbols.charAt(randomizer(0, symbols.length-1));
             }
-            this.setState({message: string});
             return string;
             
         }
         
         const startAnim = () => {
-            this.setState({ messeges: [] })
-            if (current_length < message.length) {
-                current_length += 2;
-                if (current_length > message.length) {
-                    current_length = message.length;
+            if (!this.props.skipAnim) {
+                if (current_length < message.length) {
+                    current_length += 2;
+                    if (current_length > message.length) {
+                        current_length = message.length;
+                    }
+                    const output = generateRandomString(current_length);
+                    this.setState({ message: output });
+                    setTimeout(startAnim, speed);
+                } else {
+                    showMessage();
                 }
-                const output = generateRandomString(current_length);
-                this.setState({ message: output });
-                setTimeout(startAnim, speed);
-            } else {
-                showMessage();
-            }
+            }  
         }
 
         const showMessage = () => {
@@ -69,7 +68,7 @@ class RollInText extends React.Component {
 
             this.setState({ message: output });
 
-            if (do_cycles) {
+            if (do_cycles && !this.props.skipAnim) {
                 setTimeout(showMessage, speed);
             } else {
                 if (typeof callback === 'function') {

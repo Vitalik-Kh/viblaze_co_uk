@@ -8,7 +8,7 @@ class TitleMessage extends React.Component {
         messages: [
             'Hi, my name is',
             'Vitalii Khymynets',
-            "I'm Front End",
+            "I'm a Front End",
             "Web Devoloper",
             "from Leeds"
         ],
@@ -30,7 +30,7 @@ class TitleMessage extends React.Component {
 
     componentDidUpdate = () => {
         //add new message line
-        if (this.state.animating === false) {
+        if (this.state.animating === false && !this.props.skipAnim) {
             if(this.state.curr_message < this.state.messages.length) {
                 const newOutput = [ ...this.state.output ];
                 newOutput.push(this.state.messages[this.state.curr_message]);
@@ -52,7 +52,11 @@ class TitleMessage extends React.Component {
 
     render() {
         const messages = this.state.output.map((message, i) => {
-            return <RollInText key={ i } message = { message } finished = { this.onRowAnimFinished }/>
+            return <RollInText 
+                        key={ i } 
+                        message = { message } 
+                        finished = { this.onRowAnimFinished }
+                        skipAnim = { this.props.skipAnim } />
         });
         return (
             <div className={ classes.Title }>
